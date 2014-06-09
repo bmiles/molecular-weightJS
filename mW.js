@@ -1,4 +1,4 @@
-mass = {
+var mass = {
   "H":	1.00794,
   "He":	4.002602,
   "Li":	6.941,
@@ -111,11 +111,11 @@ mass = {
 };
 
 var mW = function (chem) {
-	s = chem.match(/([A-Z][a-z]?)(\d*)/g, chem);
-	compoundWeight = 0;
+	var s = chem.match(/([A-Z][a-z]?)(\d*)/g, chem);
+	var compoundWeight = 0;
 	for (var i = 0; i < s.length; i++) {
-		element = s[i].match(/([A-Z][a-z]?)/g);
-		count = s[i].match(/([0-9]*)\d/g) || 1;
+		var element = s[i].match(/([A-Z][a-z]?)/g);
+		var count = s[i].match(/([0-9]*)\d/g) || 1;
 		compoundWeight += mass[element] * count;
 		}
 	return compoundWeight
